@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    function Parent() {
+//        this.name = 'song';
+//    }
+//    function Child() {
+//        this.age = 28;
+//    }
+//    Child.prototype = new Parent(); //通过原型,继承了Parent
+//    var demo = new Child();
+//    console.log(demo.age);
+//    console.log(demo.name); //得到被继承的属性
+
+    //prototype机制或apply和call方法实现继承相对来岁比较简单，建议使用构造函数与原型混合方式
+    function parent(){
+        this.name = '何元勋';
+    }
+    function child(){
+        this.age = 20;
+    }
+    child.prototype = new parent(); //通过原型，继承了parent
+    var demo = new child();
+    console.log(demo.age);
+    console.log(demo.name);
+
+//    function dome (){
+//        var n = 999;
+//
+//    }
+//    console.log(n);
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Ajax  异步无刷新数据获取
+    //动态数据
+    //在服务器拿到的数据都是文本文件，都是string格式，那不打数组和json格式的文件，eval方法可以将string转换为浏览器所用格式，并执行它
+    //服务器端放的多是json或者由json组成数组；
+    //HTTp请求方法：
+    //GET:用于获取数据（如：浏览帖子）
+        //把数据放到url（网址）提交
+    //POST：用于上传数据（如：用户注册）
+        //把数据放在不是url的地方提交
+    //GET、POST的区别
+        //get在url里传输数据，安全性低、容量小
+        //post安全性一般，容量几乎无限
+        //get便于分享（商品地址和url有关）适合获取，且会缓存
+        //post更适合上传(图片等)
+    //创建ajax
+    //1、创建ajax对象
+    //2、与服务器链接
+    //3、发送请求
+    //4、接收返回值
+
+    //1、创建一个ajax对象
+        //ActiveXObject('Microsoft.XMLHTTP')   ie6自带的插件
+        //XMLHttpRequest()
+    //2、连接服务器
+        //open（方法，文件名，异步传输）
+            //方法：GET/POST;
+            //文件名：你自己的文件名
+            //同步或者异步：false/true
+                //事件一件一件的进行就是同步
+                //多件事件一起执行就是异步
+    //3.发送请求
+        //send()
+    //4.接收返回值
+    //onreadystatechange：与服务器发生数据传输时
+    //readyState属性：请求状态
+        //0.（未初始化）还没有调用open（）方法；
+        //1.（载入）已调用send（）方法；
+        //2.（载入完成）send()方法完成，已收到全部相应内容
+        //3.（解析）正在解析相应内容
+        //4.（完成）相应内容解析完成，可以在客户端调用了
+        //status属性：是否成功（200成功，常见错误404[页面未找到]）
+        //responseText:返回的数据
+    //优缺点--优点
+        //1.无刷新更新数据：
+             //能在不刷新整个页面的前提下，与服务器通信维护数据。
+            // 更为迅捷的相应用户交互，避免 发送没有改变的新词信息，减少用户等待时间，带来非常好的用户体验
+        //2.异步与服务器通信：
+            //使用异步通信，不需要打断用户的操作，具有更加迅速的响应用户交互
+            //优化了Browser和Server之间的沟通，减少不必要的数据传输、时间、和网络上的数据流量；
+        //3.前后端负载平衡
+            //把一些服务器负担的工作转移到客户端，用客户端闲置的能力来处理，减轻服务器的带宽的负担，
+            // 可最大程度的较少冗余请求和对服务器造成的负担，提升站点性能；
+        //4、基本标准版被广泛支持
+        //5.界面与应用分离
+    //优缺点--缺点
+        //1.干掉了Back和History功能（解决方案：是使用URL片段标识符，（通常被称为锚点，即URL中#后面的location.hash）来保持跟踪；）
+        //2.ajax的安全问题：会暴露许多的数据和服务器逻辑；
+        //3.对搜索引擎支持较弱
+        //4.破坏程序处理的一场机制
+        //5.违背URL和资源定位的初衷；
+        //6.不能很好的支持移动设备；
+        //7.客户端过大，太多客户端代码造成成本；破坏web原有的标准；
+
+    // JavaScript Document
+    function ajax(url,fnSucc,fnFaild){
+        //参数：1、连接服务器的地址；2、成功时函数；3、失败时函数
+        //1、创建Ajax对象
+        var oAjax = null;
+        if(window.XMLHttpRequest){
+            oAjax = new XMLHttpRequest(); //ie6及以下不兼容
+        }else{
+            oAjax = new ActiveXObjext("Microsoft.XMLHTTP");
+        }
+
+        //2、连接服务器
+        oAjax.open('GET',url,true);
+
+        //3、发送请求
+        oAjax.send();
+
+        //4、接收服务器的返回
+        oAjax.onreadystatechange = function(){
+            if(oAjax.readyState ==4){  //完成
+                if(oAjax.status ==200){
+                    //alert('成功： '+oAjax.responseText);
+                    fnSucc(oAjax.responseText);
+                }else{
+                    //alert('失败');
+                    if(fnFaild){
+                        fnFaild();
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

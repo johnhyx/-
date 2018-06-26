@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f1() {
+
+        var n = 999;
+
+        function f2() {
+            console.log(n);
+        }
+    return f2();
+    }
+
+
+    var name = "The Window";
+
+    var object = {
+        name : "My Object",
+        getNameFunc : function(){
+            var that = this;
+            console.log(this.name);
+            return function(){
+                console.log(this);
+                return that.name;
+            };
+
+        }
+
+    };
+    console.log(object.getNameFunc()());
+    4.18-5.18;
+
+    4.2  2019-3.1；
+    5.3交提前了15天;
+    4.28提前20天；
+</script>
+</body>
+</html>

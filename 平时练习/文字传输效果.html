@@ -1,0 +1,38 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>无标题文档</title>
+    <style type="text/css">
+        textarea,div{width:400px; height:400px; border:1px red solid; position:absolute; top:0; left:0;}
+        div{left:500px;}
+        input{position:absolute; width:90px; height:60px; left:405px; top:0;}
+    </style>
+</head>
+<body>
+<textarea></textarea>
+<input type="button" value="传送"/>
+<div></div>
+<script>
+    var oText = document.getElementsByTagName("textarea")[0];
+    var oBtn = document.getElementsByTagName("input")[0];
+    var oDiv = document.getElementsByTagName("div")[0];
+    oBtn.onclick = function (){
+        var timer = setInterval(function (){
+            var str = oText.value;
+            if(str.length==0){
+                clearInterval(timer);
+            }else{
+                oText.value = str.substring(1);
+                console.log(str.substring(1));
+                oDiv.innerHTML += str.charAt(0);
+                console.log('-----' + str.charAt(0));
+            }
+
+        },50)
+    }
+</script>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+</head>
+
+<body>
+<input type="text">
+<input type="button" value="发送">
+<input type="button" value="批量删除">
+<ul></ul>
+<script>
+    var oInput=document.getElementsByTagName("input");
+    var oUl=document.getElementsByTagName("ul")[0];
+    var oLi1=document.getElementsByTagName("li");
+    var btn=true;
+    oInput[1].onclick=function(){
+        var oLi=document.createElement("li");
+        oLi.innerHTML=oInput[0].value;
+        oUl.appendChild(oLi);
+        if(oLi1.length>5){
+            oUl.removeChild(oUl.children[0]);
+        }
+        oInput[0].value="";
+        for(var i=0; i < oLi1.length; i++){
+            oLi1[i].onclick=function(){
+                if(btn){
+                    this.style.backgroundColor="#ccc";
+                }
+                else{
+                    this.style.backgroundColor=null;
+                }
+                btn=!btn;
+            }
+
+        }
+    }
+//    /*oInput[2].onclick=function(){
+//        for(var i=0; i<oLi1.length; i++){
+//                if(oLi1[i].style.backgroundColor="#ccc"){
+//                        oUl.removeChild(this);
+//                        alert(a);
+//                    }
+//            }
+//        }*/
+
+</script>
+</body>
+</html>

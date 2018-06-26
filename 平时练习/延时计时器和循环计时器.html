@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: #e34841;
+            color: black;
+            text-align: center;
+            line-height: 100px;
+            position:absolute;
+            left:0;
+            top:50px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="向左">
+<input type="button" value="向右">
+<div id="box">
+    一个小车
+</div>
+<script>
+//    var timer = null;
+//    var oDiv = document.getElementById('box');
+//    var i = 0;
+//    function fn1(){
+//        console.log(i);
+//        i++;
+//        if(i===10){clearInterval(timer);}
+//    }
+//    oDiv.onclick = function () {
+//        clearInterval(timer);
+//        timer = setInterval(fn1,2000);
+//    };
+var aBtn = document.getElementsByTagName("input");
+var oDiv = document.getElementById("box");
+function getStyle(obj,attr){
+    return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj)[attr];
+}
+function doMove(obj,step,end){
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function (){
+        var nowLeft = parseInt(getStyle(obj,"left"))+step;
+        if(nowLeft>=end&&step>0||nowLeft<=end&&step<0){
+            nowLeft = end;
+        }
+        obj.style.left = nowLeft+"px";
+        if(parseInt(getStyle(obj,"left"))==end){
+            clearInterval(obj.timer);
+        }
+    },300)
+}
+aBtn[1].onclick = function (){
+    doMove(oDiv,3,500);
+}
+aBtn[0].onclick = function (){
+    doMove(oDiv,-3,0);
+}
+
+var myTime  = new Date();//当前时间（既计算机读到这句函数时）系统的时间对象object
+    console.log(myTime);
+</script>
+</body>
+</html>

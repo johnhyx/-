@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //1、构造继承
+    //2、原型继承
+    //3、实例继承
+    //4、拷贝继承
+    //原型的prototype机制或者apply和call去实现比较简单，建议使用构造函数与原型混合方式
+    function parent(){
+        this.name = '何元勋';
+    }
+    function child(){
+        this.age = 20;
+    }
+    child.prototype = new parent();//通过原型，继承了原型
+    var demo = new child();
+    console.log(demo.age);
+    console.log(demo.name);
+    console.log('-------------我是分界线-------------')
+    //组合继承（混合继承）
+    function Parent(hello){
+        this.hello = hello;
+    }
+    Parent.prototype.sayHello = function(){
+        console.log(this.hello);
+    }
+    function Child(hello,world){
+        Parent.call(this,hello);//将父类的属性继承过来
+        this.world = world;//新增一些属性
+    }
+    Child.prototype = new Parent();//将父类的方法继承过来
+    Child.prototype.sayWorld = function(){//新增一些方法
+        console.log(this.world);
+    };
+    var c = new Child("zhangsan","lisi");
+    c.sayHello();
+    c.sayWorld();
+</script>
+</body>
+</html>

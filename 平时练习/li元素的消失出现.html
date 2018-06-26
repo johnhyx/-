@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            margin: 0;
+            height: 120px;
+            width: 120px;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: #e34841;
+            border: 1px #000000 solid;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<ul id="nav">
+    <li id="nav_li"></li>
+</ul>
+<script>
+    var oUl = document.getElementById('nav');
+    var oLi = document.getElementById('nav_li');
+    oUl.onclick = function (){
+        oLi.style.display = 'block';
+    }
+</script>
+</body>
+</html>

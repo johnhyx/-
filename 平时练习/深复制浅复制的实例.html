@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //此递归方法不包含数组对象
+    var obj = { a:1, arr: [2,3] };
+    var shallowObj = shallowCopy(obj);
+    function shallowCopy(src) {
+        var newobj = {};
+        for (var prop in src) {
+            if (src.hasOwnProperty(prop)) {
+                newobj[prop] = src[prop];
+            }
+        }
+        return newobj;
+    }
+    shallowObj.arr[1] = 5;
+    console.log(obj.arr[1]);   //  5
+</script>
+</body>
+</html>

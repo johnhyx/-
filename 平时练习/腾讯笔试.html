@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = 1;
+    function funca(){
+        console.log(a);
+        var a = 2;
+        console.log(this.a);
+    }
+    funca();
+
+    var host = window.location.host;
+   var  host2 = document.domain;
+   console.log(host);
+    console.log(host2);
+</script>
+</body>
+</html>

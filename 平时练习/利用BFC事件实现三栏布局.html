@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .left{width: 500px; height:100px; background-color: #e34841; float: left; text-align: center; line-height: 100px;}
+        .right{width: 200px;
+            height:100px; background-color: red; float: right; text-align: center; line-height: 100px;}
+        .mid{height: 100px; text-align: center; line-height: 100px; background-color: yellow;overflow: hidden; line-height: 100px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="left">left</div>
+    <div class="right">right</div>
+    <div class="mid">mid</div>
+<!--主要是利用在BFC区域，BFC容器不会发生与浮动元素的重叠，利用这一点也是可以实现三栏布局，但是缺点就：主要模块无法最先加载，当页面内容
+    较多时，会影响用户体验；
+-->
+</body>
+</html>

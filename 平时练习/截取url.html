@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var url = 'https://www.baidu.com/s?wd=%E6%88%AA%E5%8F%96url&rsv_spt=1&rsv_iqid=0x8fd224080001c529&issp=1&f=3&rsv_bp=0&rsv_idx=2&ie=utf-8&tn=93153557_hao_pg&rsv_enter=1&rsv_sug3=14&rsv_sug1=18&rsv_sug7=100&rsv_t=8560Optp04cuwIcBRcE0SRcbwzZxieERjtKwQCqJr0xkXTEEDyYoWc4fr2FspTPs3Izsh8Qo&rsv_sug2=0&prefixsug=%25E6%2588%25AA%25E5%258F%2596url&rsp=0&inputT=11186&rsv_sug4=11937';
+//    console.log(url.substring(url.indexOf('?'),url.length));
+//    console.log(url.split('?'));
+//
+    function getString(){
+        var urlA='http://www.alibaba.com/index.html?arg1=x1&arg2=111&argE=%1';
+        var url=urlA.split('?');
+        var object={};
+        var strs;
+        strs=url[1].split("&");
+        console.log(strs);
+        for(var i=0;i<strs.length;i++){
+            object[i]= strs[i].split("=")[1];
+        }
+        return object;
+    }
+    console.log(getString());
+    var arr = [1,2,3,4,5,6];
+    console.log(arr.slice(-3))
+</script>
+</body>
+</html>

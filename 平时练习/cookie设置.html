@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //cookie 存储数据
+    // 我们变量存储数据在页面关闭时会销毁
+    // cookie 主要是用来一段时间存储前端页面的数据，但又不至于用到后台数据库
+    //例如：一个用户访问某个网站时，我们就可以通过cookie向访问者电脑上存储数据了；
+    //1。但是不同浏览器存放cookie的位置不同，不能通用
+    //2。cookie的存储是以域名的形式区分的；
+    //3。cookie还可以设置名字；
+    //4。一个域名下存放的cookie是有限的
+    //5。每一个cookie存放的内容大小也会是有限的；
+
+    //cookie的存储方式
+    //document.cookie="username=he";//可读可写
+    //在IE和ff可以使用，在chrome禁止使用；
+    //通过document。cookie获取到当前网站的cookie时得到的是字符串形式的值，包含当前网站下的所有cookie，不同的值用分号+空格隔开
+    //我们想长时间存放cookie，须要在设置他的同时，设置一个过期时间，document.cookie="username=he；expires="+时间；(这个时间必须是字符串，默认临时储存，)
+
+    //在ie会有问题，用oDate.toGMTstring()转换为日期字符串；
+    //
+    //alert(encodeURI('你好\n你好'));//得到的值再用
+    //alert(decodeURI(encodeURI('你好\n你好')))//弹出
+    // alert(Date())
+
+    //设置cookie的方法：
+    function setCookie(key,value,t){
+        var oDate = new Date();
+        oDate.setDate(oDate.getDate()+t);
+        document.cookie=key+'='+value+';expires='+oDate.toGMTString();}
+
+    //获取一个cookie的方法
+    function getCookie(key){
+        var arr1 = document.cookie.split('; ');
+        for(var i=0;i<arr1.length;i++){
+            var arr2 = arr1[i].split('=');
+            if(arr2[0]==key){return decodeURI(arr2[1]);
+            }
+        }
+    }
+    alert(getCookie('username'));
+
+    //删除一个cookie
+    function removeCookie(key){
+    setCookie(key,'',-1);
+    }
+
+
+</script>
+</body>
+</html>

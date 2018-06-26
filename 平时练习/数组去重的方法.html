@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function unique(arr){
+        var res = [];
+        for (var i = 0;i < arr.length ; i++){
+            for(var j = i+1 ; j<arr.length; j++){
+                if(a[i] ===a[j]){
+                    j = ++i;
+                }
+            }
+            res.push(a[i])
+        }
+        return res;
+    }
+    var a = [1,2,3,7,4,2,3,5,3];
+    console.log(unique(a));
+</script>
+</body>
+</html>

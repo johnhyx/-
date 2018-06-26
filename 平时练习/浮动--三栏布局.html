@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{ height: 100px; margin: 0; padding: 0;}
+        .left,.right{height: 100px; width: 200px; background-color: red; line-height: 100px; text-align: center;}
+        .left{ float: left;}
+        .right{float: right;}
+        .mid{margin:0 200px 0 200px; height: 100%; background-color: blue; line-height:100px; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="left">left</div>
+<div class="right">right</div>
+<div class="mid">mid</div>
+<!--这地方为什么把mid放在html部分的最后，是因为块元素的独特特性，就是块元素独占一行，如果mid块放在前面，那么后面的元素就会一直在
+    下一行显示；然后就会引起穿行，导致页面效果出现错误；
+-->
+</body>
+</html>

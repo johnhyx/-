@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .heart {
+            position: relative;
+        }
+        .heart:before,.heart:after{
+            content: "";
+            width: 70px;
+            height: 115px;
+            background-color: red;
+            position: absolute;
+            left: 70px;
+            top: 0;
+            -webkit-border-radius: 50px 50px 0 0;
+            -moz-border-radius: 50px 50px 0 0;
+            border-radius: 50px 50px 0 0;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+            -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+        }
+
+        .heart:after{
+            left: 0;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+        }
+
+
+        .heart_right {
+            position: relative;
+        }
+
+        .heart_right:before,.heart_right:after {
+            content: "";
+            width: 70px;
+            height: 115px;
+            position: absolute;
+            background: red;
+            right: 70px;
+            top: 0;
+            -webkit-border-radius: 50px 50px 0 0;
+            -moz-border-radius: 50px 50px 0 0;
+            border-radius: 50px 50px 0 0;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+            -ms-transform-origin: 0 100%;
+            -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+        }
+
+        .heart_right:before {
+            right: 0;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+        <div class="heart_right"></div>
+
+    <script>
+        var heart = document.getElementsByClassName('heart');
+        var heart_right = document.getElementsByClassName('heart_right');
+
+        for (var  i = 0; i < heart.length; i++){
+                heart[i].style.left = i*140 + 'px';
+                heart[i].style.top = (i*i-i)*10 + 'px';
+        }
+        for (var  j = 0; j < heart_right.length; j++){
+            heart_right[j].style.right = j*200 + 'px';
+            heart_right[j].style.top = (j*j-j)*10 + 'px';
+        }
+    </script>
+</body>
+</html>

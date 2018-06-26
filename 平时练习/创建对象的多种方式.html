@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //javascript创建对象简单地说，无非就是使用内置对象或者各种自定义对象，当然还可用json；但写法有很多种
+    //1、对象字面量的方式
+    person = {firstname:'yuan' , lastname: 'xun', eyecolor: 'block'};
+    //2、用function来模拟无参的构造函数
+    function Person(){}
+        var person = new Person();//定义一个function，如果使用new'实例化'，该function可可以看做是一个class；
+        person.name = 'heyuanxun';
+        person.age = '20';
+        person.worka = function () {
+            console.log('hello' + person.name);
+        }
+        person.worka();
+</script>
+</body>
+</html>

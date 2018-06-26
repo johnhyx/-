@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   //1、利用 isArray判断
+    var arr = [1,2,3,4,5];
+    console.log(Array.isArray(arr) ? '是数组' : '不是数组');
+    //2、isPrototypeof 判断父及对象
+    console.log(Array.prototype.isPrototypeOf(arr) ? '是数组' : '不是数组');
+    //3、利用constructor检查
+    console.log(arr.constructor == Array ? '是数组' : '不是数组');
+    //4、instanceof判断是不是构造函数的实例
+    console.log(arr instanceof Array ? '是数组' : '不是数组' );
+    function f(){};
+    f.a = function () {
+        console.log('2');
+    };
+    f.prototype.a = function () {
+        console.log('3');
+    };
+    f.a();
+    var str = 'ssss';
+    'str'.replace('s','as');
+
+   function money(a){
+       var a1 = Math.round(parseInt(a*(0.2)));  //五险一金
+       var a2 = a - a1 -3500;//因纳税所得额
+       var a3 = 0;//缴税额度
+       if(a2 < 1500){
+           a3 = Math.round(parseInt(a2*(0.03)))
+       }else if(a2>1500 && a2<=4500 ){
+           a3 = Math.round(parseInt(a2*(0.1))-105)
+       }else if(a2>4500 && a2<=9000 ){
+           a3 = Math.round(parseInt(a2*(0.2))-555)
+       }else if(a2>9000 && a2<=35000 ){
+           a3 = Math.round(parseInt(a2*(0.25))-1005)
+       }else if(a2>35000 && a2<=55000 ){
+           a3 = Math.round(parseInt(a2*(0.3))-2755)
+       }else if(a2>55000 && a2<=80000 ){
+           a3 = Math.round(parseInt(a2*(0.35))-5505)
+       }else if(a2>80000){
+           a3 = Math.round(parseInt(a2*(0.45))-13505)
+       }
+       a4 = a - a1 - a3;
+       return a4;
+   }
+   console.log(money(16000));
+</script>
+</body>
+</html>

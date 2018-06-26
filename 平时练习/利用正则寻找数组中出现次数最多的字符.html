@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "assssagwssshfdjssxlvkssnkjklgssouwssssslnls";
+    var str1 = str.split("").sort().join("");
+    var re = /([a-z])\1+/g;
+    var iMax = 0;
+    var sW = "";
+    console.log(str1);
+    str1.replace(re,function ($0,$1){
+        //$0是该字符串中所有的子字符串；
+        //$1是该字符串中所有种类的字符；
+        console.log($0);
+        if($0.length>iMax){
+            iMax = $0.length;
+            sW = $1;
+        }
+    })
+    console.log("出现最多的字符是"+sW+",出现的次数为："+iMax);
+
+    var x = 1, y = z = 0;
+    console.log(x,y,z);// 1 0 0
+    function add(n) {
+        n = n+1;
+    }
+    y = add(x);
+    a = add(x);
+    function add(n) {
+        n = n + 3;
+    }
+    z = add(x);
+    console.log(x,y,z,a)//1 undefined undefined undefined
+    for(var i=0, j=0; i<10, j<6; i++, j++){
+        console.log(i,j)
+        k = i + j;
+    }
+    console.log(k);
+
+
+
+    var  a = 3;
+    console.log( typeof a.toString());
+</script>
+</body>
+</html>

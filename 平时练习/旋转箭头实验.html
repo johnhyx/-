@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #main{
+            width: 0;
+            height: 0;
+            border: 10px #000000 solid;
+            border-color: red transparent transparent transparent ;
+            transition: all 0.3s;
+            line-height: 100px;
+            text-align: center;
+            transform: rotate(0deg);
+            transform-origin: 50% 10%;
+        }
+        #main_bottom{
+            width: 100px;
+            height: 100px;
+            background-color: #999999;
+            border: 1px #3366ff dashed;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+</div>
+<div id="main_bottom">
+
+</div>
+<script>
+    var oDiv = document.getElementById('main');
+    var oDiv1 = document.getElementById('main_bottom');
+    oDiv1.onmouseover = function () {
+        oDiv.style.transform = 'rotate(540deg)';
+    };
+    oDiv1.onmouseout = function () {
+        oDiv.style.transform = 'rotate(0deg)';
+    }
+</script>
+</body>
+</html>

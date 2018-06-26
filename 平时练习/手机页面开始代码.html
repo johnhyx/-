@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" /> 
+<!--描述和关键词-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!--width  ----  viewport的宽度（width=device-width意思是：宽度等于设备宽度）
+initial-scale ----- 初始的缩放比例
+minimum-scale ----- 允许用户缩放到的最小比例
+maximum-scale ----- 允许用户缩放到的最大比例
+user-scalable ----- 用户是否可以手动缩放-->
+<meta name="format-detection" content="telephone=no" />
+<!--一般情况下，IOS和Android系统都会默认某长度内的数字为电话号码，即使不加也是会默认显示为电话的，因此，取消这个很有必要！-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!--它表示：允许全屏模式浏览，隐藏浏览器导航栏-->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!--它指定的iphone中safari顶端的状态条的样式
+默认值为default（白色），可以定为black（黑色）和black-translucent（灰色半透明）-->
+    <link rel="stylesheet" type="text/css" href="common.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <style type="text/css">
+     header{ height: 3.38rem; background-color:#e34942; display: flex; justify-content: space-between; padding: 0 0.71rem;align-items: center; }
+     .dd{ font-size: 1.23rem; color: white;}
+        #btn{  display: block; background-color: #e34942; border: none;}
+        footer{ height:2.92rem; position: fixed; left: 0; bottom: 0; width: 100%;}
+        footer li .fa{ font-size: 2rem;color: #fff;}
+    </style>
+</head>
+<body>
+<header class="h_a">
+    <a href="#" class="dd">返回</a>
+    <span class="dd" >商城</span>
+    <input type="button" value="..." class="dd" id="btn">
+</header>
+<footer>
+    <ul>
+        <li>
+            <i class="fa fa-home"></i><span>首页</span>
+        </li>
+        <li>
+                <i class="fa fa-th-large"></i><span>首页</span>
+        </li>
+        <li>
+            <i class="fa fa-shopping-cart"></i><span>首页</span>
+        </li>
+        <li>
+            <i class="fa fa-user-circle"></i><span>首页</span>
+        </li>
+    </ul>
+</footer>
+<script type="text/javascript">
+window.onload = function(){
+	fontSelf();
+}
+window.onresize = function () {
+	fontSelf();
+};
+function fontSelf() {
+	var wHtml = document.getElementById('html');
+	var w = document.documentElement.clientWidth;
+	w =  w > 768 ? 768 : document.documentElement.clientWidth;
+	wHtml.style.fontSize = w * 0.045 + 'px';
+};
+</script>
+</body>
+</html>
